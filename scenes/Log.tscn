@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ccayvft4x600k"]
+
+[ext_resource type="Script" uid="uid://lj0hcpmyh61n" path="res://scripts/log.gd" id="1_pik0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlr80"]
+size = Vector2(80, 12)
+
+[node name="Log" type="AnimatableBody2D" unique_id=1686275632 groups=["logs"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_pik0d")
+
+[node name="Visual" type="Polygon2D" parent="." unique_id=744948736]
+color = Color(0.41186586, 0.34658122, 0.24839166, 1)
+polygon = PackedVector2Array(-40, -6, 40, -6, 40, 6, -40, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=709915973]
+shape = SubResource("RectangleShape2D_xlr80")

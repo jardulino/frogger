@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://1vm17o6m07np"]
+
+[ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/Player.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://deq6vutf45djh" path="res://scenes/RoadLane.tscn" id="1_rvslj"]
+[ext_resource type="PackedScene" uid="uid://v13ri5wyd1nk" path="res://scenes/RiverLane.tscn" id="2_rarhs"]
+[ext_resource type="Script" uid="uid://ooifseho3rd6" path="res://scripts/game_manager.gd" id="3_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://dtdywcfkh8qvg" path="res://scenes/Home.tscn" id="3_vcsgt"]
+[ext_resource type="Script" uid="uid://376m7vh73lwe" path="res://scripts/home_manager.gd" id="6_c01mt"]
+
+[node name="Main" type="Node2D" unique_id=1987737724]
+
+[node name="Level" type="Node2D" parent="." unique_id=1234420646]
+
+[node name="Background" type="ColorRect" parent="Level" unique_id=1066025634]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0.28627452, 0, 1)
+
+[node name="Home1" parent="Level" unique_id=1644688371 instance=ExtResource("3_vcsgt")]
+position = Vector2(32, 8)
+
+[node name="Home2" parent="Level" unique_id=863102846 instance=ExtResource("3_vcsgt")]
+position = Vector2(96, 8)
+
+[node name="Home3" parent="Level" unique_id=1013629025 instance=ExtResource("3_vcsgt")]
+position = Vector2(160, 8)
+
+[node name="Home4" parent="Level" unique_id=251189869 instance=ExtResource("3_vcsgt")]
+position = Vector2(224, 8)
+
+[node name="Home5" parent="Level" unique_id=1161342702 instance=ExtResource("3_vcsgt")]
+position = Vector2(288, 8)
+
+[node name="Road" type="ColorRect" parent="Level" unique_id=1781378838]
+offset_top = 80.0
+offset_right = 320.0
+offset_bottom = 144.0
+color = Color(0.18612367, 0.21211657, 0.22307947, 1)
+
+[node name="RoadLane" parent="Level" unique_id=333883132 instance=ExtResource("1_rvslj")]
+position = Vector2(0, 88)
+speed = 40.0
+
+[node name="RoadLane2" parent="Level" unique_id=337566533 instance=ExtResource("1_rvslj")]
+position = Vector2(0, 104)
+speed = 55.0
+direction = -1.0
+
+[node name="RoadLane3" parent="Level" unique_id=80870744 instance=ExtResource("1_rvslj")]
+position = Vector2(0, 120)
+speed = 70.0
+
+[node name="RoadLane4" parent="Level" unique_id=709430856 instance=ExtResource("1_rvslj")]
+position = Vector2(0, 136)
+speed = 45.0
+direction = -1.0
+
+[node name="River" type="ColorRect" parent="Level" unique_id=1364008440]
+offset_top = 16.0
+offset_right = 320.0
+offset_bottom = 64.0
+color = Color(0.31103712, 0.6805545, 0.872458, 1)
+
+[node name="RiverLane" parent="Level" unique_id=1382868813 instance=ExtResource("2_rarhs")]
+position = Vector2(0, 24)
+speed = 35.0
+
+[node name="RiverLane2" parent="Level" unique_id=103691398 instance=ExtResource("2_rarhs")]
+position = Vector2(0, 40)
+speed = 50.0
+direction = -1.0
+
+[node name="RiverLane3" parent="Level" unique_id=808708246 instance=ExtResource("2_rarhs")]
+position = Vector2(0, 56)
+speed = 30.0
+
+[node name="Player" parent="Level" unique_id=803081338 instance=ExtResource("1_elqb8")]
+position = Vector2(160, 152)
+
+[node name="GameManager" type="Node" parent="." unique_id=32731373]
+script = ExtResource("3_0bbpv")
+
+[node name="HomeManager" type="Node" parent="." unique_id=1728513228]
+script = ExtResource("6_c01mt")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1716812193]
+
+[node name="LivesLabel" type="Label" parent="HUD" unique_id=322103314]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 31.0
+text = "Lives: 3"
+
+[node name="GameOverLabel" type="Label" parent="HUD" unique_id=979903046]
+visible = false
+offset_left = 120.0
+offset_top = 80.0
+offset_right = 212.0
+offset_bottom = 103.0
+text = "GAME OVER"

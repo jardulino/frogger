@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://v13ri5wyd1nk"]
+
+[ext_resource type="Script" uid="uid://c24gyk1todce0" path="res://scripts/river_lane.gd" id="1_htoyu"]
+
+[node name="RiverLane" type="Node2D" unique_id=1382868813]
+script = ExtResource("1_htoyu")

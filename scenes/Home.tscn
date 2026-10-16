@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dtdywcfkh8qvg"]
+
+[ext_resource type="Script" uid="uid://g71e3jxijayq" path="res://scripts/home.gd" id="1_ilu88"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg07s"]
+size = Vector2(24, 16)
+
+[node name="Home" type="Area2D" unique_id=1644688371 groups=["home"]]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_ilu88")
+
+[node name="Visual" type="Polygon2D" parent="." unique_id=1165779883]
+color = Color(0.7176471, 0.5372549, 0.85882354, 0.87058824)
+polygon = PackedVector2Array(-12, -8, 12, -8, 12, 8, -12, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1887562800]
+shape = SubResource("RectangleShape2D_dg07s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dufecum0sx841"]
+
+[ext_resource type="Script" uid="uid://b73th5nyq1ifs" path="res://scripts/vehicle.gd" id="1_ub8q0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3fpi"]
+size = Vector2(24, 12)
+
+[node name="Vehicle" type="Area2D" unique_id=1520617062]
+collision_layer = 4
+script = ExtResource("1_ub8q0")
+
+[node name="Visual" type="Polygon2D" parent="." unique_id=1187060547]
+color = Color(1, 0.11372549, 0.27058825, 1)
+polygon = PackedVector2Array(-12, -6, 12, -6, 12, 6, -12, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=976059260]
+shape = SubResource("RectangleShape2D_c3fpi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
